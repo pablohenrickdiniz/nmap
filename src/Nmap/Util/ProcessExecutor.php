@@ -25,7 +25,7 @@ class ProcessExecutor
      */
     public function execute($command, $timeout = 60)
     {
-        $process = new Process($command, null, null, null, $timeout);
+        $process = new Process((array) $command, null, null, null, $timeout);
         $process->run();
 
         if (!$process->isSuccessful()) {
